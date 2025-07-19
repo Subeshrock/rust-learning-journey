@@ -12,12 +12,14 @@ fn structs() {
     }
 
     // Create an instance of the struct
-    let user1 = User {
+    let mut user1 = User {
         username: String::from("user1"),
         email: String::from("test@testmail.com"),
         active: true,
         sign_in_count: 1,
     };
+
+    user1.username = String::from("user1Change")
 
     // Accessing fields of the struct
     println!("Username: {}", user1.username);
@@ -33,10 +35,22 @@ fn structs() {
 
     // Tuple Structs
     struct Color(i32, i32, i32);
+    struct Point(i32, i32, i32);
     let black = Color(0, 0, 0);
     println!("Black color RGB: ({}, {}, {})", black.0, black.1, black.2);
 
     // Unit-like Structs Without Any Fields
     struct UnitStruct;
     let _unit = UnitStruct; // Instance of a unit-like struct
+
+    fn build_user(email: String, username: String) -> User {
+        User {
+            email,
+            username,
+            active: true,
+            sign_in_count: 1
+        }
+    }
+
+    let user3 = build_user(String::from("test@test.com", String::from("user3")))
 }
