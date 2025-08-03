@@ -1,3 +1,8 @@
+use Day024::PrimaryColor
+use Day024::mix
+
 fn main() {
-    println!("Hello, world!");
+    let red = PrimaryColor::Red;
+    let yellow = PrimaryColor::Yellow;
+    mix(red, yellow);
 }

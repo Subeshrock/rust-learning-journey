@@ -2,5 +2,15 @@
 name = "Day024"
 version = "0.1.0"
 edition = "2024"
+description = "A library for modeling the artistic concepts"
+license = "MIT"
 
 [dependencies]
+
+# these are default opt-level for dev profile
+[profile.dev]
+opt-level = 0
+
+# these are default opt-level for release profile
+[profile.release]
+opt-level = 3
